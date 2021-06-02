@@ -1,0 +1,411 @@
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in /Users/anawara/Development/Android/adt-bundle-mac-x86_64/sdk/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-keepparameternames
+-keepattributes Exceptions,InnerClasses,Deprecated,EnclosingMethod
+
+-dontwarn rx.internal.util.unsafe.**
+-dontnote rx.internal.**
+-keep class io.reactivex.plugins.RxJavaPlugins { *; }
+-keep class io.reactivex.disposables.CompositeDisposable { *; }
+
+-dontwarn sun.misc.**
+
+-keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
+   long producerIndex;
+   long consumerIndex;
+}
+
+-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
+    rx.internal.util.atomic.LinkedQueueNode producerNode;
+}
+
+-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
+    rx.internal.util.atomic.LinkedQueueNode consumerNode;
+}
+
+-keepattributes InnerClasses
+-keepattributes Exceptions,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*
+-keepattributes EnclosingMethod
+
+-keep public class **Instabug {*;}
+-keep public class **Instabug$Builder {*;}
+-keep public class **InstabugLocale {*;}
+-keep public class com.instabug.library.util.LocaleUtils {*;}
+-keep public class com.instabug.library.util.URLUtil {*;}
+-keep public class com.instabug.library.util.filters.Filters {*;}
+-keep public class com.instabug.library.util.filters.Filter {*;}
+-keep public class **.logging.InstabugLog {*;}
+-keep public class **.logging.InstabugLog$** { *; }
+-keep public class **.user.UserEventParam {*;}
+-keep public class **.logging.InstabugNetworkLog {*;}
+-keep public class **.model.NetworkLog {*;}
+-keep public class **.internal.video.VideoProcessingService$Action {*;}
+
+-keep public class com.instabug.library.util.InstabugSDKLogger {*;}
+-keep public class **InstabugTrackingDelegate {*;}
+-keep public class **.tracking.InstabugInternalTrackingDelegate{*;}
+
+-keep public class **.library.OnSdkDismissedCallback {*;}
+-keep public class **OnSdkDismissedCallback$DismissType {*;}
+-keep public class **.model.Bug$Type {*;}
+-keep public class **OnSdkInvokedCallback {*;}
+
+-keep public class com.instabug.library.Feature {*;}
+-keep public class com.instabug.library.Feature$State {*;}
+
+-keep class **CapturableView {*;}
+-keep class **SnapshotPreparationCallback {*;}
+
+-keep public class **.invocation.InstabugInvocationEvent {*;}
+-keep public class **.invocation.InstabugInvocationMode {*;}
+-keep public class **IBGInvocationMode {*;}
+-keep public class **IBGInvocationEvent {*;}
+
+-keep public class **.invocation.util.InstabugVideoRecordingButtonCorner {*;}
+-keep public class **.invocation.util.InstabugVideoRecordingButtonPosition {*;}
+-keep public class **.invocation.util.InstabugFloatingButtonEdge {*;}
+-keep public class **.invocation.util.InstabugDateFormatter {*;}
+-keep public class **.util.VideoManipulationUtils {*;}
+-keep public class **IBGFloatingButtonEdge {*;}
+
+-keep public class **InstabugColorTheme {*;}
+-keep public class **IBGColorTheme {*;}
+
+-keep public class **AbstractMigration {*;}
+-keep public class **LastContactedMigration {*;}
+-keep public class **IBGCustomTextPlaceHolder {*;}
+-keep public class **IBGCustomTextPlaceHolder$Key {*;}
+
+-keep public class com.instabug.library.R {*;}
+
+-keep public class **.library.InstabugCustomTextPlaceHolder {*;}
+-keep public class **.library.InstabugCustomTextPlaceHolder$Key {*;}
+
+-keep public class **IBGCustomTextPlaceHolder {*;}
+-keep public class **IBGCustomTextPlaceHolder$Key {*;}
+-keep public class org.jcodec.** {*;}
+
+-keep public class **BugCategory {*;}
+-keep public class **ReportCategory {*;}
+
+-keep public class com.instabug.library.core.plugin.Plugin {*;}
+-keep public class com.instabug.bug.BugPlugin {*;}
+-keep public class com.instabug.crash.CrashPlugin {*;}
+-keep public class com.instabug.chat.ChatPlugin {*;}
+-keep public class com.instabug.survey.SurveyPlugin {*;}
+-keep public class com.instabug.featuresrequest.FeaturesRequestPlugin {*;}
+-keep public class **SDKCoreEvent {*;}
+-keep public class **SDKCoreEvent$Invocation {*;}
+-keep public class **SDKCoreEvent$Session {*;}
+-keep public class **SDKCoreEvent$User {*;}
+-keep public class **SDKCoreEvent$Network {*;}
+-keep public class **library.core.eventbus.coreeventbus.SDKCoreEventSubscriber {*;}
+
+-keep public class **CacheManager {*;}
+-keep public class **CacheManager$KeyExtractor {*;}
+-keep public class **OnDiskCache {*;}
+-keep public class **InstabugSDKLogger {*;}
+-keep public class com.instabug.library.internal.device.InstabugDeviceProperties {*;}
+-keep public class **InMemoryCache {*;}
+-keep public class **InstabugInternalTrackingDelegate {*;}
+-keep public class com.instabug.library.network.Request {*;}
+-keep public class **Request$FileToUpload {*;}
+-keep public class **Request$Callbacks {*;}
+-keep public class **Request$Endpoint {*;}
+-keep public class **Request$RequestMethod {*;}
+-keep public class **Request$RequestParameter {*;}
+-keep public class com.instabug.library.internal.storage.cache.Cache {*;}
+-keep public class com.instabug.library.internal.storage.cache.Cacheable {*;}
+-keep public class com.instabug.library.network.InstabugNetworkBasedBackgroundService {*;}
+-keep public class com.instabug.library.network.NetworkManager {*;}
+-keep public class com.instabug.library.networkv2.NetworkManager {*;}
+-keep public interface com.instabug.library.networkv2.INetworkManager {*;}
+-keep public class com.instabug.library.networkv2.connection.InstabugBaseConnectionManagerImpl {*;}
+-keep public class com.instabug.library.networkv2.connection.NormalConnectionManager {*;}
+-keep public class com.instabug.library.networkv2.connection.MultipartConnectionManager {*;}
+-keep public class com.instabug.library.networkv2.connection.FileDownloadConnectionManager {*;}
+-keep public class com.instabug.library.networkv2.request.RequestType {*;}
+-keep public class com.instabug.library.networkv2.request.RequestParameter {*;}
+-keep public class com.instabug.library.networkv2.request.RequestMethod {*;}
+-keep public class com.instabug.library.networkv2.request.Request {*;}
+-keep public class com.instabug.library.networkv2.request.Request$Builder {*;}
+-keep public interface com.instabug.library.networkv2.request.Request$.Callbacks {*;}
+-keep public class com.instabug.library.networkv2.request.Header {*;}
+-keep public class com.instabug.library.networkv2.request.FileToUpload {*;}
+-keep public class com.instabug.library.network.NetworkManager$RequestType {*;}
+-keep public class com.instabug.library.network.RequestResponse {*;}
+-keep public class com.instabug.library.InstabugState {*;}
+-keep public class **InstabugUserEventLogger {*;}
+-keep public class **StringUtility {*;}
+-keep public class com.instabug.library._InstabugActivity {*;}
+-keep public class **InstabugThemeResolver {*;}
+-keep public class com.instabug.library.util.OrientationUtils {*;}
+-keep public class com.instabug.library.util.AttrResolver {*;}
+-keep public class com.instabug.library.util.InstabugLogoProvider {*;}
+-keep public class **InstabugDateFormatter {*;}
+-keep public class com.instabug.survey.ui.popup.BaseFragment {*;}
+-keep public class com.instabug.library.core.ui.BaseFragment {*;}
+-keep public class com.instabug.library.core.ui.BasePresenter {*;}
+-keep public class com.instabug.library.core.ui.BaseContract {*;}
+-keep public class **BaseContract*View {*;}
+-keep public class **BaseContract*Presenter {*;}
+-keep public class com.instabug.library.view.AlertDialog{*;}
+-keep public class com.instabug.library.view.viewgroup.IBPercentageRelativeLayout {*;}
+-keep public class com.instabug.library.core.InstabugCore {*;}
+-keep public class com.instabug.library.analytics.AnalyticsWrapper {*;}
+-keep public class **.analytics.model.Api* {*;}
+-keep public class **.analytics.model.SDKEvent* {*;}
+-keep public class **.analytics.model.SDKEvent.ExtraAttribute* {*;}
+-keep public class **.analytics.util.ViewResourcesUtil {*;}
+-keep public class **.internal.video.InternalScreenRecordHelper {*;}
+-keep public class **.internal.video.InternalAutoScreenRecorderHelper {*;}
+-keep public class **.internal.storage.AttachmentManager {*;}
+-keep public class **.internal.storage.DiskUtils {*;}
+-keep public class **.internal.storage.operation.DeleteUriDiskOperation {*;}
+-keep public class **.internal.storage.operation.WriteStateToFileDiskOperation {*;}
+-keep public interface **.internal.storage.operation.DiskOperation {*;}
+-keep public interface **.internal.storage.operation.DiskOperationCallback {*;}
+-keep public class **.internal.storage.executor.DeleteOperationExecutor {*;}
+-keep public class **.internal.storage.executor.ReadOperationExecutor {*;}
+-keep public class **.internal.storage.executor.WriteOperationExecutor {*;}
+-keep public class **.internal.storage.cache.db.DatabaseManager {*;}
+-keep public class **.internal.storage.cache.UserAttributesCacheManager {*;}
+-keep public class **.internal.storage.operation.ReadStateFromFileDiskOperation {*;}
+-keep public class **.internal.video.AutoScreenRecordingContract {*;}
+-keep public class **.internal.video.ScreenRecordingContract {*;}
+-keep public class **.internal.video.ScreenRecordEvent {*;}
+-keep public class **.view.ViewUtils {*;}
+-keep public interface **AlertDialog$OnAlertViewsClickListener {*;}
+-keep public class **.core.eventbus.AutoScreenRecordingEventBus {*;}
+-keep public class **.internal.video.ScreenRecordingEvent {*;}
+-keep public enum **.internal.video.ScreenRecordingService** {
+                **[] $VALUES;
+                 public *;}
+-keep public class **.internal.video.ScreenRecordingFileHolder {*;}
+-keep public class **.internal.video.InstabugVideoUtils {*;}
+
+-keep public class **.internal.storage.AttachmentsUtility {*;}
+-keepclassmembers public class com.instabug.library.model.Attachment {*;}
+-keep public enum com.instabug.library.model.Attachment$AttachmentState {*;}
+-keep public enum com.instabug.library.model.Attachment$Type {*;}
+-keep public class com.instabug.library.model.State {*;}
+-keep public class com.instabug.library.model.State$Builder {*;}
+-keep public class com.instabug.library.model.State$StateItem {*;}
+-keep public class com.instabug.library.model.session.** {*;}
+-keep public enum com.instabug.library.visualusersteps.State {*;}
+-keep public class **InstabugInternalBuilder {*;}
+#TODO remove the next line
+-keep public class com.instabug.library.settings.SettingsManager {*;}
+-keep public class **settings.AttachmentsTypesParams {*;}
+-keep public class **.screenshot.ExtraScreenshotHelper {*;}
+-keep public interface **.screenshot.ExtraScreenshotHelper$OnCaptureListener {*;}
+-keep public class **ScreenRecordingFloatingButtonInvoker {*;}
+-keep public class **library.core.plugin.PluginPromptOption {*;}
+-keep public class **library.core.plugin.PluginPromptOption$PromptOptionIdentifier {*;}
+-keep public class **library.core.plugin.PluginPromptOption$OnInvocationListener {*;}
+
+
+-keep public class **InvocationMode {*;}
+-keep public class **invocation.OnInvokeCallback {*;}
+-keep public class **invocation.invocationdialog.InstabugDialogActivity {*;}
+-keep public class **invocation.invocationdialog.InstabugDialogItem {*;}
+-keep public class **invocation.invocationdialog.InstabugDialogListener {*;}
+-keep public interface **invocation.invocationdialog.InstabugDialogListener$InstabugDialogCallbacks {*;}
+-keep public class com.instabug.library.extendedbugreport.ExtendedBugReport {*;}
+-keep public enum com.instabug.library.extendedbugreport.ExtendedBugReport$State {*;}
+-keep public class **.view.ScaleImageView {*;}
+-keep public class **EventBus {*;}
+-keep public class **ActivityLifeCycleEvent {*;}
+-keep public class **CurrentActivityLifeCycleEventBus {*;}
+-keep public class com.instabug.library.model.AssetEntity {*;}
+-keep public class com.instabug.library.model.AssetEntity$AssetType {*;}
+-keep public class com.instabug.library.util.BitmapUtils {*;}
+-keep public interface com.instabug.library.util.BitmapUtils$OnSaveBitmapCallback {*;}
+-keep public interface com.instabug.library.util.BitmapUtils$OnBitmapReady {*;}
+-keep public class **util.InstabugDeprecationLogger {*;}
+-keep public class **util.InstabugDeprecationLogger$MigrationSection {*;}
+-keep public class **DiskUtils {*;}
+-keep public class com.instabug.library.util.ListUtils {*;}
+-keep public class **InstabugAddAttachmentsFragment {*;}
+-keep public class **InstabugAudioRecordingFragment {*;}
+-keep public class **core.ui.BaseToolbarActivity{*;}
+-keep public class com.instabug.library.core.ui.BaseFragmentActivity {*;}
+-keep public class com.instabug.library.util.Colorizer {*;}
+-keep public class com.instabug.library.util.ResourcesUtils {*;}
+-keep public class **CacheChangedListener {*;}
+-keep public class **VideoManipulationUtils {*;}
+-keep public class **AudioPlayer {*;}
+-keep public class com.instabug.library.FragmentVisibilityChangedListener {*;}
+-keep public class **.util.InstabugAppData {*;}
+-keep public class **.util.PlaceHolderUtils {*;}
+-keep public class **BaseReport {*;}
+-keep public class com.instabug.library.network.Api {*;}
+-keep public class com.instabug.library.network.Api$Parameter {*;}
+-keep public class com.instabug.library.internal.storage.cache.AssetsCacheManager {*;}
+-keep public class com.instabug.library.internal.storage.cache.AssetsCacheManager$OnDownloadFinished {*;}
+-keep public class **ToolbarFragment {*;}
+-keep public class com.instabug.library.internal.video.VideoPlayerFragment {*;}
+-keep public class com.instabug.library.util.PermissionsUtils {*;}
+-keep public class com.instabug.library.util.SystemServiceUtils {*;}
+-keep public class **InstabugAddAttachmentsFragment$Callbacks {*;}
+-keep public class **InstabugAudioRecordingFragment$Callbacks {*;}
+-keep public class **AudioPlayer$OnStopListener {*;}
+-keep public class **Invocation {*;}
+-keep public class **ScaleImageView {*;}
+-keep public class **network.BaseNetworkTask {*;}
+
+-keep public class **InitialScreenshotHelper{*;}
+-keep public class **InitialScreenshotHelper$InitialScreenshotCapturingListener{*;}
+-keep public class **LastContactedChangedBroadcast{*;}
+-keep public class **FieldHelper{*;}
+-keep public class **RootViewInfo{*;}
+-keep public class com.instabug.library.util.StatusBarUtils{*;}
+-keep public class **ScreenshotTaker{*;}
+-keep public class **AnnotationLayout{*;}
+-keep public class **LocaleUtils{*;}
+-keep public class **bugreporting.model.ExtraReportField{*;}
+-keep public class **Internal {*;}
+-keep public class **UserEvent {*;}
+-keep public class com.instabug.library.util.LocaleHelper {*;}
+-keep public class **.util.InstabugMemoryUtils{*;}
+-keep public class **.util.memory.MemoryUtils{*;}
+-keep public class com.instabug.library.util.DisplayUtils{*;}
+-keep public class com.instabug.library.util.SimpleTextWatcher{*;}
+-keep public class **util.threading.PoolProvider {*;}
+-keep interface **.library.OnSdkDismissCallback {*;}
+-keep public enum **.library.OnSdkDismissCallback$DismissType {*;}
+-keep public enum **.library.OnSdkDismissCallback$ReportType {*;}
+
+-keep class **.R
+-keep class **.R$* {
+    <fields>;
+}
+
+-keepclassmembers class * extends java.lang.Enum {
+    <fields>;
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-keep public class com.instabug.library.visualusersteps.VisualUserStepsHelper {*;}
+-keep public class com.instabug.library.visualusersteps.VisualUserStep {*;}
+
+-keep class com.instabug.library.Instabug { *; }
+-keep class com.instabug.library.InstabugColorTheme { *; }
+-keep class com.instabug.library.ui.custom.** { *; }
+-keep class com.instabug.library.APIBuildChecker { *; }
+-dontwarn edu.umd.cs.findbugs.annotations.SuppressFBWarnings
+-keep class com.instabug.library.util.DrawableUtils { *; }
+-keep class com.instabug.library.util.StringUtility { *; }
+-keep class com.instabug.library.util.ScreenUtility { *; }
+-keep class com.instabug.library.util.KeyboardUtils { *; }
+-keep class com.instabug.library.util.BitmapWorkerTask { *; }
+-keep class com.instabug.library.util.FileUtils { *; }
+-keep interface com.instabug.library.util.BitmapWorkerTask$OnImageLoadedListener { *; }
+-keep class com.instabug.library.util.BitmapWorkerTask { *; }
+-keep public class com.instabug.library.util.memory.** { public protected *; }
+-keep public interface com.instabug.library.util.memory.** { public protected *; }
+-keep class com.instabug.library.util.BitmapWorkerTask$OnImageLoadedListener { *; }
+-keep class com.instabug.library.util.DeviceStateProvider { *; }
+-keep class com.instabug.library.view.IconView { *; }
+-keep interface **ActionType {*;}
+-keep class com.instabug.library.ui.onboarding.WelcomeMessage { *; }
+-keep public enum com.instabug.library.ui.onboarding.WelcomeMessage$State { *; }
+
+-keep class com.instabug.library.ui.custom.CircularImageView { *; }
+-keep class com.instabug.library.InstabugBaseFragment { *; }
+-keep class com.instabug.library.core.ui.InstabugBaseFragment { *; }
+-keep public enum com.instabug.library.internal.video.ScreenRecordingService$Action { *; }
+-keep class com.instabug.library.ui.custom.InstabugAlertDialog{ *; }
+
+
+-keep class **model.Report { *; }
+-keep class ****model.Report$OnReportCreatedListener{*;}
+
+-keep class  com.instabug.library.internal.storage.cache.db.userAttribute.UserAttributesDbHelper { *; }
+-keep class  com.instabug.library.util.InstabugSDKLogger { *; }
+
+-keep class **eventbus.coreeventbus.SDKCoreEventPublisher { *; }
+-keep class **APIBuildChecker { *; }
+-keep class **InstabugDeprecationLogger { *; }
+-keep class **InstabugDeprecationLogger { *; }
+
+-keep class **core.eventbus.coreeventbus.SDKCoreEvent {*;}
+-keep class **core.eventbus.coreeventbus.SDKCoreEvent$ForegroundStatus {*;}
+-keep class **core.eventbus.coreeventbus.SDKCoreEvent$Invocation {*;}
+-keep class **core.eventbus.coreeventbus.SDKCoreEvent$Session {*;}
+-keep class **core.eventbus.coreeventbus.SDKCoreEvent$User {*;}
+-keep class **core.eventbus.coreeventbus.SDKCoreEvent$Network {*;}
+-keep class **core.eventbus.coreeventbus.SDKCoreEvent$Feature {*;}
+-keep class com.instabug.library.util.ReportHelper {*;}
+-keep class com.instabug.library.invocation.InvocationManager {*;}
+-keep class **InvocationSettings {*;}
+-keep class **InstabugAlertDialog {*;}
+-keep public class com.instabug.library.internal.storage.cache.AttachmentsDbHelper {*;}
+-keep public class com.instabug.library.internal.storage.cache.db.DatabaseManager {*;}
+-keep public class com.instabug.library.internal.storage.cache.InMemoryCache {*;}
+-keep public class com.instabug.library.internal.storage.operation.WriteStateToFileDiskOperation {*;}
+-keep public class com.instabug.library.internal.storage.operation.ReadStateFromFileDiskOperation {*;}
+-keep public class com.instabug.library.internal.storage.cache.db.SQLiteDatabaseWrapper {*;}
+-keep public class com.instabug.library.PresentationManager {*;}
+-keep public class com.instabug.library.internal.storage.cache.db.InstabugDbContract {*;}
+-keep public class com.instabug.library.internal.storage.cache.db.InstabugDbContract$* {*;}
+-keep public class com.instabug.library.internal.storage.cache.db.InstabugDbContract.APMNetworkLogEntry {*;}
+-keep public class com.instabug.library.internal.storage.cache.db.InstabugDbContract.ExecutionTracesEntry {*;}
+-keep public class com.instabug.library.internal.storage.cache.db.InstabugDbContract.APMSessionMetaDataEntry {*;}
+-keep public class com.instabug.library.internal.storage.cache.db.InstabugDbContract.DanglingExecutionTracesEntry {*;}
+-keep public class com.instabug.library.internal.storage.cache.db.InstabugDbContract.DanglingExecutionTracesAttributesEntry {*;}
+-keep public interface **network.NetworkManager$OnDoRequestListener {*;}
+-keep public interface **networkv2.NetworkManager$OnDoRequestListener {*;}
+-keep public class com.instabug.library.core.eventbus.UserEventsEventBus{*;}
+-dontwarn org.jacoco.agent.**
+-dontwarn io.reactivex.**
+-dontnote com.instabug.**
+-keep public class **threading.HandlerThreadProvider {*;}
+-keep public class com.instabug.library.internal.video.RequestPermissionActivityLauncher {*;}
+-keep public interface com.instabug.library.screenshot.ScreenshotProvider$ScreenshotCapturingListener{*;}
+-keep public class com.instabug.library.internal.video.RequestPermissionActivity {*;}
+-keepclasseswithmembernames,includedescriptorclasses class * {
+    native <methods>;
+}
+-keep public class com.instabug.library.util.ObjectMapper {*;}
+-keep public class com.instabug.library.user.UserManagerWrapper {*;}
+
+-keep public class com.instabug.library.internal.video.RequestPermissionActivity {*;}
+-keep public class androidx.core.app.** {*;}
+
+-keep interface com.instabug.library.internal.orchestrator.Action { *; }
+-keep public class com.instabug.library.internal.orchestrator.ActionsOrchestrator { *; }
+-keep public class com.instabug.library.util.TimeUtils { *; }
+-keep public class com.instabug.library.util.TaskDebouncer { *; }
+-keep public enum com.instabug.library.model.State$Action {*;}
+-keep public class com.instabug.library.internal.storage.ProcessedBytes {*;}
+-keep public class com.instabug.library.internal.storage.ProcessedUri {*;}
+-keep public class com.instabug.library.internal.storage.cache.db.InstabugDBInsertionListener {*;}
+-keep interface com.instabug.library.Platform {*;}
+-keep interface com.instabug.library.model.StepType { *; }
+
+-keep public interface com.instabug.library.model.common.Session {*;}
+-keep public class com.instabug.library.internal.utils.PreferencesUtils {*;}
+-keep public class com.instabug.library.internal.utils.stability.handler.exception.ExceptionHandler {*;}
+-keep public interface com.instabug.library.internal.utils.stability.execution.Executable {*;}
+-keep public interface com.instabug.library.internal.utils.stability.execution.ReturnableExecutable {*;}
+-keep public interface com.instabug.library.internal.utils.stability.handler.penalty.PenaltyHandler {*;}
+-keep public interface com.instabug.library.internal.utils.stability.handler.penalty.PenaltyType {*;}
+-keep public class com.instabug.library.util.threading.ThreadUtils {*;}
+-keep public class com.instabug.library.internal.contentprovider.InstabugContentProvider {*;}

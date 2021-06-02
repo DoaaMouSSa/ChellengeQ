@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestInfo.Views.HomePage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Challenge" FontSize="40" TextColor="#1a8497" HorizontalOptions="Center"></Label>
+
+            <StackLayout  BackgroundColor="WhiteSmoke" Padding="40">
+
+                <Button Text="History" x:Name="btnToHistoryPage" Clicked="btnToHistoryPage_Clicked" BackgroundColor="#1a8497" TextColor="WhiteSmoke" FontSize="25" CornerRadius="10"></Button>
+                <Button Text="Science" x:Name="btnToSciensePage"  BackgroundColor="#1a8497" TextColor="WhiteSmoke" FontSize="25" CornerRadius="10" Clicked="btnToSciensePage_Clicked"></Button>
+                <Button Text="Sports" x:Name="btnToSportPage"  BackgroundColor="#1a8497" TextColor="WhiteSmoke" FontSize="25" CornerRadius="10" Clicked="btnToSportPage_Clicked"></Button>
+                <Button Text="Geography" x:Name="btnToGoePage" BackgroundColor="#1a8497" TextColor="WhiteSmoke" FontSize="25" Clicked="btnToGoePage_Clicked" CornerRadius="10"></Button>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

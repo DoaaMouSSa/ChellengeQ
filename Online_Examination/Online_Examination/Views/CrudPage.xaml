@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestInfo.Views.CrudPage">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Label Text="Welcome to Crud" />
+            <Entry Placeholder="Id" x:Name="txtId"></Entry>
+            <Entry Placeholder="Qustion" x:Name="txtQues" ClearButtonVisibility="WhileEditing"></Entry>
+                <Entry Placeholder="Answer A" x:Name="txtanswerA" ClearButtonVisibility="WhileEditing"></Entry>
+                <Entry Placeholder="Answer B" x:Name="txtanswerB" ClearButtonVisibility="WhileEditing"></Entry>
+                <Entry Placeholder="Answer C" x:Name="txtanswerC" ClearButtonVisibility="WhileEditing"></Entry>
+                <Entry Placeholder="Answer D" x:Name="txtanswerD" ClearButtonVisibility="WhileEditing"></Entry>
+            <Picker x:Name="pickMaterial" SelectedIndexChanged="pickMaterial_SelectedIndexChanged"></Picker>
+            <?mathces with any one?>
+                <Entry Placeholder="Correct_Answer"  x:Name="txtCorrect" ClearButtonVisibility="WhileEditing"></Entry>
+
+            <Button x:Name="btnAdd" Text="Add Qustion" Clicked="btnAdd_Clicked"
+                    ></Button>
+            <Button x:Name="btnDelete" Text="Delte" Clicked="btnDelete_Clicked"></Button>
+            <Button x:Name="btndisplay" Text="Display" Clicked="btndisplay_Clicked"></Button>
+            <Label x:Name="lblDisplay">...</Label>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

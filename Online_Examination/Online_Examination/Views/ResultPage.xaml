@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestInfo.Views.ResultPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Label Text="Result" HorizontalOptions="Center" Padding="10"  FontSize="25" TextColor="#078989"></Label>
+
+            <Label x:Name="lblTotal"  HorizontalOptions="Center" Padding="5"  FontSize="30" TextColor="DarkRed"/>
+                <Label  x:Name="lblCorrect" Text="Correct" HorizontalOptions="Center" Padding="10"  FontSize="25" TextColor="#078989" IsVisible="False"></Label>
+
+                <BoxView HeightRequest="2" BackgroundColor="#ededed" Margin="5"></BoxView>
+            <Label x:Name="lblCorrectAns" TextColor="DarkRed" LineHeight="1.8" Margin="10"></Label>
+            <Button Text="Back To Main Page" x:Name="btnBack" BackgroundColor="#1a8497" TextColor="WhiteSmoke" FontSize="20" Clicked="btnBack_Clicked" Margin="15"></Button>
+        </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

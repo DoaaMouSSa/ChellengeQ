@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.online_examination">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <application android:label="Online_Examination.Android" android:theme="@style/MainTheme" android:name="crc642dd93175d5b53973.MainApp" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
+    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="Online_Examination" android:theme="@style/MainTheme" android:name="crc642dd93175d5b53973.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <service android:name="crc64a98abb514ffad9f1.KeepAliveService" />
+    <service android:name="crc64396a3fe5f8138e3f.KeepAliveService" />
+    <receiver android:enabled="true" android:exported="false" android:label="Essentials Battery Broadcast Receiver" android:name="crc64a0e0a82d0db9a07d.BatteryBroadcastReceiver" />
+    <receiver android:enabled="true" android:exported="false" android:label="Essentials Energy Saver Broadcast Receiver" android:name="crc64a0e0a82d0db9a07d.EnergySaverBroadcastReceiver" />
+    <receiver android:enabled="true" android:exported="false" android:label="Essentials Connectivity Broadcast Receiver" android:name="crc64a0e0a82d0db9a07d.ConnectivityBroadcastReceiver" />
+    <provider android:authorities="com.companyname.online_examination.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="xamarin.essentials.fileProvider">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/xamarin_essentials_fileprovider_file_paths" />
+    </provider>
+    <receiver android:enabled="true" android:exported="false" android:name="crc643f46942d9dd1fff9.PowerSaveModeBroadcastReceiver" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999999" android:authorities="com.companyname.online_examination.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.com.companyname.online_examination" />
+      </intent-filter>
+    </receiver>
+    <activity android:name="com.instabug.bug.view.reporting.ReportingContainerActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:launchMode="singleTask" android:theme="@style/InstabugSdkTheme" android:windowSoftInputMode="adjustResize">
+      <intent-filter>
+        <data android:host="instabug-disclaimer.com" android:scheme="instabug-bug" />
+        <data android:host="instabug-disclaimer.com" android:scheme="repro-steps-disclaimer" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <action android:name="android.intent.action.VIEW" />
+      </intent-filter>
+    </activity>
+    <service android:name="com.instabug.bug.network.InstabugBugsUploaderService" android:permission="android.permission.BIND_JOB_SERVICE" />
+    <service android:name="com.instabug.bug.view.actionList.service.ReportCategoriesService" android:permission="android.permission.BIND_JOB_SERVICE" />
+    <activity android:name="com.instabug.chat.ui.ChatActivity" android:configChanges="orientation|screenSize" android:launchMode="singleTop" android:theme="@style/InstabugSdkTheme" android:windowSoftInputMode="adjustResize" />
+    <service android:name="com.instabug.chat.network.InstabugMessageUploaderService" android:permission="android.permission.BIND_JOB_SERVICE" />
+    <service android:name="com.instabug.chat.network.InstabugPushNotificationTokenService" android:permission="android.permission.BIND_JOB_SERVICE" />
+    <service android:name="com.instabug.library.analytics.network.InstabugAnalyticsUploaderService" android:permission="android.permission.BIND_JOB_SERVICE" />
+    <activity android:name="com.instabug.library.internal.video.RequestPermissionActivity" android:configChanges="orientation|screenSize" android:theme="@style/InstabugTranslucentSdkTheme" />
+    <activity android:name="com.instabug.library.invocation.invocationdialog.InstabugDialogActivity" android:launchMode="singleTask" android:theme="@style/InstabugTranslucentSdkTheme" />
+    <activity android:name="com.instabug.library.ui.onboarding.OnboardingActivity" android:launchMode="singleTask" android:theme="@style/InstabugTranslucentSdkTheme" />
+    <provider android:name="com.instabug.library.internal.contentprovider.InstabugContentProvider" android:authorities="com.companyname.online_examination.internal.contentprovider.InstabugContentProvider" android:enabled="true" android:exported="false" />
+    <service android:name="com.instabug.library.internal.video.ScreenRecordingService" android:enabled="true" android:exported="false" android:foregroundServiceType="mediaProjection" p6:targetApi="q" xmlns:p6="http://schemas.android.com/tools" />
+    <service android:name="com.instabug.library.screenshot.ScreenshotCaptureService" android:enabled="true" android:exported="false" android:foregroundServiceType="mediaProjection" p6:targetApi="q" xmlns:p6="http://schemas.android.com/tools" />
+    <service android:name="com.instabug.crash.network.InstabugCrashesUploaderService" android:permission="android.permission.BIND_JOB_SERVICE" />
+    <service android:name="com.instabug.anr.network.InstabugAnrUploaderService" android:permission="android.permission.BIND_JOB_SERVICE" />
+    <activity android:name="com.instabug.featuresrequest.ui.FeaturesRequestActivity" android:configChanges="orientation|screenSize" android:launchMode="singleTop" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="adjustResize" />
+    <service android:name="com.instabug.featuresrequest.network.service.FeaturesRequestVoteService" android:permission="android.permission.BIND_JOB_SERVICE" />
+    <activity android:name="com.instabug.survey.ui.SurveyActivity" android:configChanges="orientation|screenSize" android:launchMode="singleTask" android:theme="@style/InstabugTranslucentSdkTheme" android:windowSoftInputMode="adjustResize" />
+    <activity android:name="com.instabug.survey.announcements.ui.activity.AnnouncementActivity" android:configChanges="orientation|screenSize" android:launchMode="singleTop" android:theme="@style/InstabugTranslucentSdkTheme" android:windowSoftInputMode="adjustResize" />
+    <service android:name="com.instabug.survey.network.service.InstabugSurveysSubmitterService" android:permission="android.permission.BIND_JOB_SERVICE" />
+    <service android:name="com.instabug.survey.announcements.network.InstabugAnnouncementSubmitterService" android:permission="android.permission.BIND_JOB_SERVICE" />
+  </application>
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+</manifest>

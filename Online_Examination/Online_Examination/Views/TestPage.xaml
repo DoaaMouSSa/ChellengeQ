@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestInfo.Views.TestPage"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout >
+            <Label x:Name="lblHeader"  HorizontalOptions="Center" Padding="10" TextColor="#078989" FontSize="25"/>
+            <Label x:Name="lblNum" Text="Question Nomber" Padding="10" TextColor="#909090" FontSize="18"/>
+            <Frame BorderColor="#e3e3e3" Margin="12" CornerRadius="7">
+
+                <StackLayout  x:Name="stackRdo" Padding="7">
+                    <Label x:Name="lblQ" FontSize="15" TextColor="Black"></Label>
+                    <BoxView Margin="3" BackgroundColor="#f5f4f4" HeightRequest="2"></BoxView>
+                    <Label Margin="0,10,0,15">Select An answer :</Label>
+
+                    <RadioButton  GroupName="answer"  x:Name="rd1" IsChecked="True" Margin="0,0,0,15">
+                    </RadioButton>
+
+                    <RadioButton  GroupName="answer"  x:Name="rd2" Margin="0,0,0,15">
+                    </RadioButton>
+
+                    <RadioButton GroupName="answer"  x:Name="rd3" Margin="0,0,0,15"></RadioButton>
+
+                    <RadioButton  GroupName="answer"  x:Name="rd4" Margin="0,0,0,15">
+                    </RadioButton>
+                </StackLayout>
+            </Frame>
+            <Button Text="Next" x:Name="btnNext" Clicked="btnNext_Clicked" BackgroundColor="#078989" TextColor="GhostWhite"  FontSize="15" Margin="15"></Button>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

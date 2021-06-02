@@ -1,0 +1,1 @@
+<FrameLayout style="@style/InstabugBaseContainer" android:padding="0dp" xmlns:android="http://schemas.android.com/apk/res/android"><ListView android:id="@+id/instabug_lst_chats" android:layout_width="match_parent" android:layout_height="match_parent" android:divider="?attr/instabug_divider_color" android:dividerHeight="1dp" android:drawSelectorOnTop="true" /></FrameLayout>

@@ -1,0 +1,1 @@
+<EditText android:id="@+id/instabug_extra_field" style="@style/InstabugEditTextStyle" android:layout_height="wrap_content" android:inputType="textAutoCorrect|textMultiLine|textCapSentences" android:minLines="2" tools:text="Hello\nOther\nWorld" xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,1 @@
+<RelativeLayout style="@style/InstabugDialogToolbarContainer" android:layout_marginBottom="0dp" xmlns:android="http://schemas.android.com/apk/res/android"><TextView android:id="@+id/instabug_fragment_title" style="@style/InstabugToolbarTitle" android:layout_centerInParent="true" android:gravity="center" /></RelativeLayout>

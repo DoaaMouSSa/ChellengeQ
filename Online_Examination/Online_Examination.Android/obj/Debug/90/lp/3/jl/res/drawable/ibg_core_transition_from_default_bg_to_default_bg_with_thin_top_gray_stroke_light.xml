@@ -1,0 +1,1 @@
+<transition xmlns:android="http://schemas.android.com/apk/res/android"><item android:drawable="@drawable/ibg_core_bg_light" /><item android:drawable="@drawable/ibg_core_bg_with_thin_top_gray_stroke_light" /></transition>
